@@ -4,19 +4,24 @@
 <meta charset="utf-8">
 <title>Exit 38 Enterprise — Your Road to Financial Freedom</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Exit 38 Enterprise helps you accelerate personal & business growth: credit repair (see results in as little as 7 days), credit building, eviction/rental history deletion, FHA assistance, business/nonprofit setup, business management/scaling, business financing, and website building. 100% money-back guaranteed if no results.">
+<meta name="description" content="Exit 38 Enterprise helps you accelerate personal & business growth: credit repair (see results in as little as 7 days), credit building, eviction/rental history deletion, FHA assistance, business & nonprofit setup, management & scaling, business financing, and website building. 100% money-back guaranteed if no results.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
 <style>
   :root{
-    --brand:#047857;    /* emerald primary (close to Tailwind emerald-600) */
-    --accent:#a7f3d0;   /* soft emerald mint */
-    --ink:#06271d;
-    --muted:#3b7662;
-    --bg:#f3fdf8;
+    --brand:#1E3A8A;        /* deep blue primary */
+    --brand-mid:#0B63C8;    /* brighter blue for accents */
+    --ink:#0b1220;          /* body text */
+    --muted:#506084;        /* subtext */
+    --bg:#F6F8FF;           /* very light blue background */
+    --card:#ffffff;         /* cards */
+    --green:#065f46;        /* subtle dark green hints */
+    --mint:#c8f2de;         /* faint green accent */
     --radius:14px;
   }
+
   *{box-sizing:border-box}
   html,body{margin:0;height:100%}
   body{
@@ -28,7 +33,16 @@
     font-family:Montserrat,Inter,system-ui,Arial,sans-serif;
     margin:0 0 .5rem;
   }
-  a{color:var(--brand);text-decoration:none}
+  a{color:var(--brand-mid);text-decoration:none}
+  .container{max-width:1200px;margin:0 auto;padding:clamp(16px,3vw,28px)}
+  .grid{display:grid;gap:24px}
+  .card{
+    background:var(--card);
+    border-radius:var(--radius);
+    box-shadow:0 10px 28px rgba(14,32,80,.07);
+    padding:clamp(18px,2.2vw,28px);
+    border:1px solid rgba(11,99,200,.06);
+  }
   .btn{
     display:inline-block;
     border:none;
@@ -39,7 +53,7 @@
     font-weight:700;
     letter-spacing:.2px;
     cursor:pointer;
-    box-shadow:0 4px 14px rgba(4,120,87,.2);
+    box-shadow:0 6px 22px rgba(10,40,120,.22);
   }
   .btn.secondary{
     background:#fff;
@@ -47,308 +61,283 @@
     border:2px solid var(--brand);
   }
   .btn.accent{
-    background:var(--accent);
-    color:#064e3b;
+    background:var(--brand-mid);
+    color:#fff;
   }
-  .container{
-    max-width:1200px;
-    margin:0 auto;
-    padding:clamp(16px,3vw,28px);
-  }
-  .grid{display:grid;gap:24px}
-  .card{
-    background:#fff;
-    border-radius:var(--radius);
-    box-shadow:0 8px 26px rgba(0,0,0,.04);
-    padding:clamp(18px,2.2vw,28px);
-  }
+
+  /* HEADER / HERO */
   header.hero-wrap{
-    background: radial-gradient(1200px 420px at 10% -10%, #d1fae5, transparent 60%), radial-gradient(900px 400px at 110% 0%, #ffffff, transparent 60%);
-    border-bottom:1px solid #ccf0dd;
+    background:
+      radial-gradient(1200px 420px at 10% -10%, #E7F1FF, transparent 60%),
+      radial-gradient(900px 400px at 110% 0%, #EEF7FF, transparent 60%);
+    border-bottom:1px solid rgba(11,99,200,.15);
   }
-  .brandline{
-    display:flex;
-    flex-direction:column;
-    gap:4px;
+  .brandbar{
+    display:flex;align-items:center;gap:14px;flex-wrap:wrap;
   }
-  .kicker{
+  .logo-wrap{
+    display:flex;align-items:center;gap:12px;
+  }
+  .logo-title{
+    display:flex;flex-direction:column;gap:2px;
+  }
+  .logo-kicker{
     color:var(--muted);
-    font-weight:600;
+    font-weight:700;
     text-transform:uppercase;
-    letter-spacing:.15em;
-    margin-bottom:.3rem;
+    letter-spacing:.16em;
     font-size:.78rem;
   }
+  .logo-sub{
+    color:var(--green);
+    font-size:.85rem;
+    font-weight:700;
+    letter-spacing:.04em;
+  }
   .hero{
-    display:grid;
-    grid-template-columns:1.2fr .8fr;
-    align-items:center;
-    gap:28px;
+    display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:center;margin-top:8px;
   }
-  @media (max-width:900px){
-    .hero{grid-template-columns:1fr}
-  }
-  .trust-row{
-    display:flex;
-    flex-wrap:wrap;
-    gap:10px;
-    margin-top:10px;
-  }
+  @media (max-width:900px){.hero{grid-template-columns:1fr}}
+  .trust-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px}
   .trust-badge{
-    background:#fff;
-    border:1px solid #d6f2e2;
-    border-radius:999px;
-    padding:.45rem .75rem;
-    font-size:.8rem;
-    color:#064e3b;
+    background:#fff;border:1px solid rgba(11,99,200,.18);
+    border-radius:999px;padding:.45rem .75rem;font-size:.82rem;color:#123a72;
   }
-  .hero h1{
-    font-size:clamp(1.6rem,4.2vw,3rem);
-    line-height:1.05;
-  }
-  .hero p{color:#0b3e2d}
-  .services{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:24px;
-  }
-  @media (max-width:780px){
-    .services{grid-template-columns:1fr}
-  }
-  .process{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:24px;
-  }
-  @media (max-width:900px){
-    .process{grid-template-columns:1fr}
-  }
-  .process .step{
-    position:relative;
-    padding-top:10px;
-  }
-  .step-number{
-    position:absolute;
-    inset:0 auto auto 0;
-    background:var(--brand);
-    color:#fff;
-    width:34px;
-    height:34px;
-    border-radius:50%;
-    display:grid;
-    place-items:center;
-    font-weight:800;
-  }
-  .cta-bar{
-    position:sticky;
-    bottom:0;
-    z-index:50;
-    background:rgba(243,253,248,.95);
-    border-top:1px solid #c6eedb;
-    backdrop-filter:blur(6px);
-    display:flex;
-    justify-content:center;
-    padding:12px;
-  }
-  footer{
-    background:#05291f;
-    color:#e2f6ed;
-    padding-top:36px;
-  }
-  footer .grid{
-    display:grid;
-    grid-template-columns:1.2fr .8fr;
-    gap:24px;
-  }
-  @media (max-width:900px){
-    footer .grid{grid-template-columns:1fr}
-  }
-  .verse{
-    font-style:italic;
-    color:#d1fff0;
-    border-left:4px solid #a7f3d0;
-    padding-left:10px;
-  }
-  form.lead{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:12px;
-  }
-  form.lead input,
-  form.lead select,
-  form.lead textarea{
-    width:100%;
-    padding:.85rem;
-    border:1px solid #bee6d3;
-    border-radius:12px;
-    font:inherit;
-    background:#fff;
+  .hero h1{font-size:clamp(1.7rem,4.2vw,3rem);line-height:1.05;color:#0d2f78}
+  .hero p{color:#143962}
+
+  /* FORMS */
+  form.lead{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  form.lead input, form.lead select, form.lead textarea{
+    width:100%;padding:.9rem;border:1px solid rgba(11,99,200,.25);
+    border-radius:12px;font:inherit;background:#fff
   }
   form.lead textarea{min-height:90px;grid-column:1/-1}
   form.lead .full{grid-column:1/-1}
-  .legal{font-size:.78rem;color:#3e5d4d}
-  ul{padding-left:1.1rem}
+  .legal{font-size:.78rem;color:#5f6d89}
+
+  /* SERVICES */
+  .services{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+  @media (max-width:780px){.services{grid-template-columns:1fr}}
+  .services .card{border:1px solid rgba(6,95,70,.08)} /* a hint of green */
+
+  /* PROCESS */
+  .process{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  @media (max-width:900px){.process{grid-template-columns:1fr}}
+  .process .step{position:relative;padding-top:10px}
+  .step-number{
+    position:absolute;inset:0 auto auto 0;background:var(--brand-mid);
+    color:#fff;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;font-weight:800
+  }
+
+  /* CTA BAR */
+  .cta-bar{
+    position:sticky;bottom:0;z-index:50;
+    background:rgba(246,248,255,.92);
+    border-top:1px solid rgba(11,99,200,.18);
+    backdrop-filter:blur(6px);
+    display:flex;justify-content:center;padding:12px;
+  }
+
+  /* FOOTER */
+  footer{background:#0A1E3A;color:#E6F0FF;padding-top:36px}
+  footer .grid{display:grid;grid-template-columns:1.2fr .8fr;gap:24px}
+  @media (max-width:900px){footer .grid{grid-template-columns:1fr}}
+  footer a{color:#fff}
+  .verse{
+    font-style:italic;color:#dff5ea;border-left:4px solid var(--mint);padding-left:10px
+  }
+
+  /* SMALL GREEN HINTS */
+  .hint-green{border-left:4px solid var(--green);padding-left:10px}
 </style>
 </head>
 <body>
-  <!-- HEADER -->
-  <header class="hero-wrap">
-    <div class="container">
-      <div class="brandline">
-        <!-- logo removed per your request -->
-        <div class="kicker">Exit 38 Enterprise</div>
-        <h1>Your road to financial freedom</h1>
-      </div>
-      <div class="trust-row">
-        <div class="trust-badge">Results in as little as 7 days*</div>
-        <div class="trust-badge">Secure & private</div>
-        <div class="trust-badge">100% money-back if no results</div>
-      </div>
-    </div>
 
-    <section class="container hero">
-      <div>
-        <div class="kicker">Personal & Business Credit • Funding • Setup</div>
-        <p>We help individuals and entrepreneurs fix credit, build credit profiles, set up business and nonprofit entities, and secure the financing to scale—fast.</p>
-        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:10px">
-          <a href="#lead" class="btn accent">Get Your Free Credit & Funding Plan</a>
-          <a href="tel:+16095324449" class="btn secondary">Call (609) 532-4449</a>
+<!-- HEADER -->
+<header class="hero-wrap">
+  <div class="container">
+    <div class="brandbar">
+      <div class="logo-wrap" aria-label="Exit 38 Enterprise logo">
+        <!-- Inline SVG logo (blue shield + road/arrow + “38”) -->
+        <svg width="64" height="64" viewBox="0 0 64 64" role="img" aria-label="Exit 38 shield logo">
+          <defs>
+            <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#1E3A8A"/>
+              <stop offset="100%" stop-color="#0B63C8"/>
+            </linearGradient>
+          </defs>
+          <!-- shield -->
+          <path d="M32 2c9 6 17 8 28 8v18c0 17-12 27-28 34C16 55 4 45 4 28V10c11 0 19-2 28-8z" fill="url(#g)"/>
+          <!-- subtle green road stripe -->
+          <path d="M30 12c4 10 5 21 0 40" stroke="#065f46" stroke-width="4" stroke-linecap="round" opacity=".9"/>
+          <!-- arrow (white) -->
+          <path d="M22 26h10v-6l10 10-10 10v-6H22z" fill="#ffffff" opacity=".95"/>
+          <!-- “38” -->
+          <text x="32" y="51" text-anchor="middle" font-family="Montserrat, Arial, sans-serif" font-weight="800" font-size="16" fill="#ffffff">38</text>
+        </svg>
+
+        <div class="logo-title">
+          <div class="logo-kicker">Exit 38 Enterprise</div>
+          <div class="logo-sub">Your road to financial freedom</div>
         </div>
-        <div class="legal" style="margin-top:10px">*Some clients begin seeing movement within 7 days. Individual results and timeframes vary.</div>
-      </div>
-      <div class="card">
-        <h3 style="margin:0 0 .5rem">Quick Start — Free Assessment</h3>
-        <form id="lead" class="lead" onsubmit="return sendLead(event)">
-          <input type="text" id="name" placeholder="Full name" required>
-          <input type="tel" id="phone" placeholder="Phone" required>
-          <input type="email" id="email" placeholder="Email" required>
-          <select id="service">
-            <option value="">What do you need help with?</option>
-            <option>Credit repair</option>
-            <option>Credit building</option>
-            <option>Eviction/rental history deletion</option>
-            <option>FHA assistance</option>
-            <option>Business / nonprofit setup</option>
-            <option>Business management & scaling</option>
-            <option>Business financing</option>
-            <option>Website building</option>
-          </select>
-          <textarea id="goal" placeholder="Briefly share your goals (optional)"></textarea>
-          <label class="full legal"><input type="checkbox" id="consent" required> I agree to be contacted by phone, SMS, or email about my inquiry.</label>
-          <button class="btn accent full" type="submit">Get My Plan</button>
-          <div class="full legal">We respect your privacy. 100% money-back guarantee if no results.</div>
-        </form>
-      </div>
-    </section>
-  </header>
-
-  <!-- SERVICES -->
-  <section class="container">
-    <div class="kicker">What we do</div>
-    <h2>Services that move you forward</h2>
-    <div class="services" style="margin-top:14px">
-      <div class="card item">
-        <h3>Credit repair <small style="color:var(--muted)">(start seeing results in 7 days)</small></h3>
-        <p>Targeted disputes, bureau strategies, and creditor interventions to correct inaccurate, unverifiable, or unfair items.</p>
-      </div>
-      <div class="card item">
-        <h3>Credit building</h3>
-        <p>Trade lines, utilization strategy, and positive-history stacking to grow your profile for lending.</p>
-      </div>
-      <div class="card item">
-        <h3>Eviction / rental history deletion</h3>
-        <p>Landlord and reporting-database resolution tactics to remove improper records where eligible.</p>
-      </div>
-      <div class="card item">
-        <h3>FHA assistance</h3>
-        <p>Readiness planning for FHA—including credit criteria prep and documentation guidance.</p>
-      </div>
-      <div class="card item">
-        <h3>Business & nonprofit setup</h3>
-        <p>LLC/Corp & 501(c)(3) formation, EIN, bank setup, compliance, and fundability framework.</p>
-      </div>
-      <div class="card item">
-        <h3>Business management & scaling</h3>
-        <p>Systems, SOPs, marketing funnels, and KPIs to level up operations.</p>
-      </div>
-      <div class="card item">
-        <h3>Business financing</h3>
-        <p>Readiness, packaging, and lender matching—for lines of credit, cards, and term loans.</p>
-      </div>
-      <div class="card item">
-        <h3>Building websites</h3>
-        <p>Fast, mobile-first sites that convert traffic into booked calls and applications.</p>
       </div>
     </div>
-  </section>
 
-  <!-- PROCESS -->
-  <section class="container">
-    <div class="kicker">How it works</div>
-    <h2>The fast lane to results</h2>
-    <div class="process" style="margin-top:14px">
-      <div class="card step">
-        <div class="step-number">1</div>
-        <h3 style="margin-left:42px">Free audit</h3>
-        <p style="margin-left:42px">We review your credit and goals—no pressure. Clear, actionable next steps in minutes.</p>
-      </div>
-      <div class="card step">
-        <div class="step-number">2</div>
-        <h3 style="margin-left:42px">Custom action plan</h3>
-        <p style="margin-left:42px">We prioritize high-impact moves for removals, building, and fundability.</p>
-      </div>
-      <div class="card step">
-        <div class="step-number">3</div>
-        <h3 style="margin-left:42px">Momentum & funding</h3>
-        <p style="margin-left:42px">Track progress, stack wins, and unlock approvals as your profile strengthens.</p>
-      </div>
+    <div class="trust-row" style="margin-top:10px">
+      <div class="trust-badge">Results in as little as 7 days*</div>
+      <div class="trust-badge">Secure & private</div>
+      <div class="trust-badge" style="border-color:rgba(6,95,70,.25)">100% money-back if no results</div>
     </div>
-    <div style="margin-top:12px"><a href="#lead" class="btn">Start Your Free Audit</a></div>
-  </section>
-
-  <!-- GUARANTEE / REASONS -->
-  <section class="container">
-    <div class="grid">
-      <div class="card">
-        <h3>Our guarantee</h3>
-        <p><strong>100% money-back if no results.</strong> If we fail to deliver results within the agreed service window, we refund your fee. Simple.</p>
-        <p class="legal">“Results” are defined in the service agreement you sign at onboarding. We don’t guarantee loan approvals; we maximize your eligibility.</p>
-      </div>
-      <div class="card">
-        <h3>Why clients choose Exit 38</h3>
-        <ul>
-          <li>Clean, mobile-first layout</li>
-          <li>Simple CTA: book a free plan</li>
-          <li>Faith-based foundation</li>
-        </ul>
-        <a href="#lead" class="btn accent">Book My Free Assessment</a>
-      </div>
-    </div>
-  </section>
-
-  <div class="cta-bar">
-    <a href="#lead" class="btn accent">Get My Free Credit & Funding Plan</a>
   </div>
 
-  <!-- FOOTER -->
-  <footer>
-    <div class="container grid">
-      <div>
-        <h2 style="margin-bottom:.5rem">Exit 38 Enterprise</h2>
-        <p class="verse">Matthew 19:26 — “With man this is impossible, but with God all things are possible.”</p>
-        <p style="margin-top:10px">Your road to financial freedom begins here.</p>
+  <!-- HERO -->
+  <section class="container hero">
+    <div>
+      <div class="hint-green" style="margin-bottom:.6rem">Personal &amp; Business Credit • Funding • Setup</div>
+      <h1>Remove roadblocks, build strong credit, and unlock funding.</h1>
+      <p>We help individuals and entrepreneurs fix credit, build credit profiles, set up business and nonprofit entities, and secure the financing to scale—fast.</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:10px">
+        <a href="#lead" class="btn accent">Get Your Free Credit &amp; Funding Plan</a>
+        <a href="tel:+16095324449" class="btn secondary">Call (609) 532-4449</a>
       </div>
-      <div class="card" style="background:#073528;color:#d7e5eb">
-        <h3>Contact</h3>
-        <p><strong>Phone:</strong> <a href="tel:+16095324449" style="color:#fff">(609) 532-4449</a><br>
-           <strong>Email:</strong> <a href="mailto:info@exit38ent.com" style="color:#fff">info@exit38ent.com</a></p>
-        <p><a class="btn" href="#lead">Book Free Assessment</a></p>
-      </div>
+      <div class="legal" style="margin-top:10px">*Some clients begin seeing movement within 7 days. Individual results and timeframes vary.</div>
     </div>
-    <div class="container legal" style="opacity:.8">
-      <p>© <span id="year"></span> Exit 38 Enterprise. All rights reserved.</p>
+
+    <div class="card">
+      <h3 style="margin:0 0 .5rem">Quick Start — Free Assessment</h3>
+      <form id="lead" class="lead" onsubmit="return sendLead(event)">
+        <input type="text" id="name" placeholder="Full name" required>
+        <input type="tel" id="phone" placeholder="Phone" required>
+        <input type="email" id="email" placeholder="Email" required>
+        <select id="service">
+          <option value="">What do you need help with?</option>
+          <option>Credit repair</option>
+          <option>Credit building</option>
+          <option>Eviction/rental history deletion</option>
+          <option>FHA assistance</option>
+          <option>Business / nonprofit setup</option>
+          <option>Business management &amp; scaling</option>
+          <option>Business financing</option>
+          <option>Website building</option>
+        </select>
+        <textarea id="goal" placeholder="Briefly share your goals (optional)"></textarea>
+        <label class="full legal"><input type="checkbox" id="consent" required> I agree to be contacted by phone, SMS, or email about my inquiry.</label>
+        <button class="btn accent full" type="submit">Get My Plan</button>
+        <div class="full legal">We respect your privacy. 100% money-back guarantee if no results.</div>
+      </form>
     </div>
-  </footer>
+  </section>
+</header>
+
+<!-- SERVICES -->
+<section class="container">
+  <div class="logo-kicker">What we do</div>
+  <h2>Services that move you forward</h2>
+  <div class="services" style="margin-top:14px">
+    <div class="card item">
+      <h3>Credit repair <small style="color:var(--muted)">(start seeing results in 7 days)</small></h3>
+      <p>Targeted disputes, bureau strategies, and creditor interventions to correct inaccurate, unverifiable, or unfair items.</p>
+    </div>
+    <div class="card item">
+      <h3>Credit building</h3>
+      <p>Trade lines, utilization strategy, and positive-history stacking to grow your profile for lending.</p>
+    </div>
+    <div class="card item">
+      <h3>Eviction / rental history deletion</h3>
+      <p>Landlord and reporting-database resolution tactics to remove improper records where eligible.</p>
+    </div>
+    <div class="card item">
+      <h3>FHA assistance</h3>
+      <p>Readiness planning for FHA — credit criteria prep and documentation guidance.</p>
+    </div>
+    <div class="card item">
+      <h3>Business &amp; nonprofit setup</h3>
+      <p>LLC/Corp &amp; 501(c)(3) formation, EIN, bank setup, compliance, and fundability framework.</p>
+    </div>
+    <div class="card item">
+      <h3>Business management &amp; scaling</h3>
+      <p>Systems, SOPs, marketing funnels, and KPIs to level up operations.</p>
+    </div>
+    <div class="card item">
+      <h3>Business financing</h3>
+      <p>Readiness, packaging, and lender matching — for lines of credit, cards, and term loans.</p>
+    </div>
+    <div class="card item">
+      <h3>Building websites</h3>
+      <p>Fast, mobile-first sites that convert traffic into booked calls and applications.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="container">
+  <div class="logo-kicker">How it works</div>
+  <h2>The fast lane to results</h2>
+  <div class="process" style="margin-top:14px">
+    <div class="card step">
+      <div class="step-number">1</div>
+      <h3 style="margin-left:42px">Free audit</h3>
+      <p style="margin-left:42px">We review your credit and goals — clear, actionable next steps in minutes.</p>
+    </div>
+    <div class="card step">
+      <div class="step-number">2</div>
+      <h3 style="margin-left:42px">Custom action plan</h3>
+      <p style="margin-left:42px">We prioritize high-impact moves for removals, building, and fundability.</p>
+    </div>
+    <div class="card step">
+      <div class="step-number">3</div>
+      <h3 style="margin-left:42px">Momentum &amp; funding</h3>
+      <p style="margin-left:42px">Track progress, stack wins, and unlock approvals as your profile strengthens.</p>
+    </div>
+  </div>
+  <div style="margin-top:12px"><a href="#lead" class="btn">Start Your Free Audit</a></div>
+</section>
+
+<!-- GUARANTEE / REASONS -->
+<section class="container">
+  <div class="grid">
+    <div class="card">
+      <h3>Our guarantee</h3>
+      <p><strong>100% money-back if no results.</strong> If we fail to deliver results within the agreed service window, we refund your fee. Simple.</p>
+      <p class="legal">“Results” are defined in the service agreement you sign at onboarding. We don’t guarantee loan approvals; we maximize your eligibility.</p>
+    </div>
+    <div class="card">
+      <h3>Why clients choose Exit 38</h3>
+      <ul>
+        <li>Blue-first design with trustworthy feel</li>
+        <li>Subtle green cues for growth and approval</li>
+        <li>Mobile-first layout and a single clear CTA</li>
+      </ul>
+      <a href="#lead" class="btn accent">Book My Free Assessment</a>
+    </div>
+  </div>
+</section>
+
+<!-- STICKY CTA -->
+<div class="cta-bar">
+  <a href="#lead" class="btn accent">Get My Free Credit &amp; Funding Plan</a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container grid">
+    <div>
+      <h2 style="margin-bottom:.5rem">Exit 38 Enterprise</h2>
+      <p class="verse">Matthew 19:26 — “With man this is impossible, but with God all things are possible.”</p>
+      <p>Your road to financial freedom begins here.</p>
+    </div>
+    <div class="card" style="background:#0b2c57;color:#E6F0FF">
+      <h3>Contact</h3>
+      <p><strong>Phone:</strong> <a href="tel:+16095324449" style="color:#fff">(609) 532-4449</a><br>
+         <strong>Email:</strong> <a href="mailto:info@exit38ent.com" style="color:#fff">info@exit38ent.com</a></p>
+      <p><a class="btn" href="#lead">Book Free Assessment</a></p>
+    </div>
+  </div>
+  <div class="container legal" style="opacity:.85">
+    <p>© <span id="year"></span> Exit 38 Enterprise. All rights reserved.</p>
+  </div>
+</footer>
 
 <script>
   function sendLead(e){
